@@ -1,0 +1,44 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+<html>
+
+<head>
+
+    <head>
+        <title>
+            List users
+        </title>
+    </head>
+
+    <body>
+        {%block kedar%}
+        <table border=1>
+            <tr>
+                <th>ID</th>
+                <th>Product name</th>
+                <th>product price</th>
+                <th>product description</th>
+                <th>pro_category_name</th>
+				{% if request.session.admin is not none %}
+                <th colspan="2">Action</th>
+				{%endif%}
+            </tr>
+            {% for i in ul %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.pro_name}}</td>
+                <td>{{i.pro_price}}</td>
+                <td>{{i.pro_dscript}}</td>
+                <td>{{i.pro_category_name}}</td>
+                {% if request.session.admin is not none %}
+                <td><a href="deleteproduct/{{i.id}}">delete</a></td>
+                
+                <td><a href='editproduct?id={{i.id}}'>edit</a></td>{%endif%}
+                <!-- editproduct?name -->
+            </tr>
+            {% endfor %}
+        </table>
+        {%endblock%}
+
+    </body>
+
+</html>

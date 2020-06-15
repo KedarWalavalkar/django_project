@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Shop Homepage - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <!-- <link href="../statics/bootstrap.min.css" rel='stylesheet'> -->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'shop-homepage.css' %}" rel="stylesheet">
+    <!-- <link href="../statics/shop-homepage.css" rel='stylesheet'> -->
+
+</head>
+
+<body>
+
+
+
+
+    <h1 class="my-4">Walavalkar Brothers</h1>
+    <div class="list-group">
+        {% for i in c1 %}
+        <a href="slist?cname={{i.pro_category_name}}" class="list-group-item">{{i.pro_category_name}}</a> {% endfor %}
+
+    </div>
+
+
+
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

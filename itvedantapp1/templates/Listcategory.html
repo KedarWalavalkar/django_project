@@ -1,0 +1,38 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+<html>
+
+<head>
+
+    <head>
+        <title>
+            List users
+        </title>
+    </head>
+
+    <body>
+        {%block kedar%}
+        <table border=1>
+            <tr>
+                <th>Category</th>
+                <!--        <th>address</th>-->
+                <th colspan="2">Action</th>
+
+                <!--        <th>job title</th>-->
+                <!--        <th>email</th>-->
+            </tr>
+            {% for i in ul %}
+            <tr>
+                <td>{{i.pro_category_name}}</td>
+                <!--        <td>{{i.email}}</td>-->
+                <!--        <td>{{i.contact}}</td>-->
+                <!--        <td>{{i.password}}</td>-->
+                <td><a href="deletecategory/{{i.pro_category_name}}">delete</a></td>
+                <!-- <td><a href='edit?name={{i.0}}'>edit</a></td> -->
+            </tr>
+            {% endfor %}
+        </table>
+        {%endblock%}
+
+    </body>
+
+</html>

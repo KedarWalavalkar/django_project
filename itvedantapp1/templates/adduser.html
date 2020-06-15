@@ -1,0 +1,32 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <!-- <h1 class="my-4">Walavalkar's Shop</h1>
+    <div class="list-group">
+        {% for i in c1 %}
+        <a href="#" class="list-group-item">{{i.pro_category_name}}</a> {% endfor %}
+    </div> -->
+    {% block kedar %}
+    <table border="1">
+        <tr>
+            <td colspan="2">
+                <h2>Add users</h2>
+            </td>
+        </tr>
+        <tr>
+            <form action='adduserdb' method="POST">
+                {%csrf_token%} {{user.as_table}}
+                <td colspan="2" align="center"><input type="submit" value="Add user"></td>
+            </form>
+        </tr>
+    </table>
+    {%endblock%}
+
+</body>
+
+</html>

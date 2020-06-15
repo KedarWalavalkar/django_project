@@ -1,0 +1,20 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+<html>
+
+<head>
+
+</head>
+
+<body>
+    {% block kedar %}
+    <table border="1">
+        <form action='addproductdb' method="POST">
+            {%csrf_token%} {{product.as_table}}
+            <td colspan="2" align="center"><input type="submit" value="Add Product"></td>
+        </form>
+    </table>
+    {%endblock%}
+</body>
+
+
+</html>

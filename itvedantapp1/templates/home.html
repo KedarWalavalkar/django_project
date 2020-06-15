@@ -1,0 +1,45 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>
+        Welcome Admin
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <!-- <link href="../statics/bootstrap.min.css" rel='stylesheet'> -->
+    <!-- Custom styles for this template -->
+    <link href="{% static 'shop-homepage.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {% block kedar %} {%for i in p1%}
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="#">{{i.pro_name}}</a>
+                </h4>
+                <h5>{{i.pro_price}}</h5>
+                <button onclick="location.href='additemdb/{{i.id}}';">Add to Cart</button>
+                <p class="card-text">{{i.pro_dscript}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+        </div>
+    </div>
+    {%endfor%} {% endblock %}
+</body>
+
+</html>
